@@ -34,3 +34,7 @@ padding: 10px;
 float: none;
 text-align: left;
 }
+#player1_score, #player2_score{
+	font-size: 20px;
+	
+}
