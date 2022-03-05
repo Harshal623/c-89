@@ -30,3 +30,36 @@ function Send(){
     document.getElementById("output").innerHTML = row
     document.getElementById("word").value = ""
 }
+questionturn = "player 1"
+answerturn = "player 2"
+function check(){
+    get_answer = document.getElementById("inputbox").value
+    answer = get_answer.toLowerCase()
+    if(answer == word){
+        if(answerturn == "player 1"){
+            player1_score += 1
+            document.getElementById("player1_score").innerHTML = player1_score
+        }
+        else if(answerturn == "player 2"){
+            player2_score += 1
+            document.getElementById("player2_score").innerHTML = player2_score
+        }
+    }
+    if (questionturn == "player 1"){
+        questionturn = "player 2"
+        document.getElementById("questionturn").innerHTML = "questionturn : "+player2_name
+    }
+    else{
+        questionturn = "player 1"
+        document.getElementById("questionturn").innerHTML = "questionturn : "+player1_name
+    }
+    if(answerturn == "player 2"){
+        answerturn = "player 1"
+        document.getElementById("answerturn").innerHTML = "answerturn : "+player1_name
+    }
+    else {
+        answerturn = "player 2"
+        document.getElementById("answerturn").innerHTML = "answerturn : "+player2_name
+    }
+    document.getElementById("output").innerHTML = ""
+}
